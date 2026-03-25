@@ -1,252 +1,318 @@
-*{
-    -moz-box-sizing: border-box; /* Firexfox */
-    -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
-    box-sizing: border-box; /* IE */
-  }
+* {
+    box-sizing: border-box;
+}
 
-.clearfix:after {
+.clearfix::after {
     content: "";
     display: table;
     clear: both;
-  }
-  body{
-      margin: 0;
-      padding: 0;
-  }
-main{
-    margin: 0 auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
     font-family: 'Open Sans', sans-serif;
+    color: #565a5c;
 }
-#logo{
-    width: 7.75em;
-    border-inline-end: 0.1em solid #dce0e0;
+
+/* ── Header ── */
+header {
+    border-bottom: 1px solid #dce0e0;
+    padding: 0.75rem 1.5rem;
 }
-.hero img{
+
+#logo {
+    display: inline-block;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #565a5c;
+    letter-spacing: -0.5px;
+}
+
+.logo-accent {
+    color: #c51f1f;
+}
+
+/* ── Hero ── */
+.hero img {
     width: 100%;
-    max-height: fit-content;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
 }
-.info{
+
+/* ── Info bar ── */
+.info {
     text-align: center;
-    border-block-end: 0.1rem solid #dce0e0;
+    border-bottom: 1px solid #dce0e0;
+    padding: 1.5rem 1rem;
 }
-#profile{
-    display: grid;
-    justify-content: space-evenly;
-    justify-items: stretch;
-}
-#ownerdetails{
-    margin-block-start: 1.25em;
-    margin-block-end: 0;
 
+#profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
 }
-#ownerphoto{
-    max-height: 5.625em;
-    max-width: 5.625em;
+
+#ownerdetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ownerphoto {
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
-    
+    object-fit: cover;
+    border: 2px solid #dce0e0;
 }
-h2.relationship,h2.name{
+
+h2.relationship,
+h2.name {
     font-size: 0.875rem;
     color: #909597;
+    margin: 0;
+}
 
+h2.relationship {
+    font-weight: 400;
+    margin-top: 0.5rem;
 }
-h2.relationship{
-   font-weight: normal;
-   margin-block-end: 0;
-}
-h2.name{
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-.petdetails{
-    margin-block-start: 0;
 
+.petdetails {
+    margin: 0;
 }
-.petdetails h1{
-    margin-block-end: 0;
-    font-size: 1.6875rem;
-    color: #666a6c;
+
+.petdetails h1 {
+    font-size: 1.5rem;
+    color: #565a5c;
+    margin: 0 0 0.25rem 0;
 }
-.petdetails address{
+
+.petdetails address {
     font-size: 0.875rem;
     color: #909597;
-    margin-block-end: 1.25em;
+    font-style: normal;
+    margin-bottom: 1rem;
 }
-.info .icons{
+
+.info .icons {
     font-size: 0.8125rem;
     color: #909597;
     display: inline-flex;
     flex-direction: column;
-    align-content: stretch;
-    margin-inline-end: 3.8125em;
-} 
-.icons img{
-    max-height: 1.875em;
-    margin-block-end: 0.1875em;
+    align-items: center;
+    margin: 0 1.25rem;
 }
-.booking{
-    margin-block-end: 2.1875em;
 
+.icons img {
+    height: 1.75rem;
+    margin-bottom: 0.25rem;
 }
-.price{
-    font-weight: bold;
+
+/* ── Booking ── */
+.booking {
+    margin-top: 1.5rem;
+}
+
+.price {
     font-size: 1.125rem;
-    margin-block-end: 1em;
-    
-    
-
-
+    color: #565a5c;
+    margin: 0 0 0.75rem 0;
 }
-.button{
+
+.button {
+    display: inline-block;
     text-decoration: none;
     background-color: #c51f1f;
-    color: white;
-    padding: 1% 5% 1% 5%;
+    color: #fff;
+    padding: 0.65rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
 }
-a:hover{
-    background-color: #dce0e0;
+
+.button:hover {
+    background-color: #a81919;
+    color: #fff;
+}
+
+a:hover {
     color: #c51f1f;
 }
-section{
-    background-color: #f5f5f5;
 
+/* ── Section base ── */
+section {
+    background-color: #f5f5f5;
 }
-.about{
-   padding: 1.25em;
-   border-block-end: 0.1rem solid #dce0e0;
-    
+
+.about,
+.care,
+.games,
+.photos {
+    padding: 1.5rem;
+    border-bottom: 1px solid #dce0e0;
 }
-.about h3{
+
+/* ── About ── */
+.about h3 {
     text-align: center;
     font-size: 1rem;
     color: #565a5c;
+    margin-top: 0;
 }
-#para{
+
+#para {
     color: #565a5c;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
-#contactowner{
+
+#contactowner {
     text-align: center;
-    
 }
-.about a{
+
+.about a {
     text-decoration: none;
     color: #c51f1f;
-    font-size: 0.8325rem;
-    font-weight: bold;
+    font-size: 0.875rem;
+    font-weight: 600;
 }
-.care{
-   padding: 1.25em;
-   border-block-end: 0.1em solid #dce0e0;
-   font-size: 0.8125rem;
-   color: #565a5c;
 
+/* ── Care ── */
+.care {
+    font-size: 0.875rem;
 }
-time{
-    font-weight: bold;
-}
-.games{
-    padding: 1.25em;
-    border-block-end: 0.1em solid #dce0e0;
-    font-size: 0.8125rem;
+
+.care h4,
+.games h4 {
+    margin-top: 0;
     color: #565a5c;
-    margin-block-end: 1em;
 }
 
-.photos{
-    padding: 1.25em;
-    border-block-end: 0.1em solid #dce0e0;
+time {
+    font-weight: 600;
+}
+
+/* ── Games ── */
+.games {
+    font-size: 0.875rem;
+}
+
+.favgames p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.4rem 0;
+}
+
+.favgames img {
+    height: 1.25rem;
+}
+
+/* ── Photos ── */
+.photos {
     display: grid;
-    justify-content: start
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
-.photos img{
+
+.photos img {
     width: 100%;
-    margin-block-end: 1em;
+    border-radius: 4px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
 }
-footer{
+
+/* ── Footer ── */
+footer {
     background-color: #f5f5f5;
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    padding: 1.5rem;
+    font-size: 0.8125rem;
     color: #909597;
+    border-top: 1px solid #dce0e0;
 }
 
-@media only screen and (min-width: 800px){
+/* ── Desktop layout (800px+) ── */
+@media only screen and (min-width: 800px) {
 
-    .info{
-        display: inline-flex;
-        height: 200px;
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
     }
-    #profile{
-        margin-left: 292px;
-        margin-top: 12px;
-       width: 660px;
-       height: 150px;
-       display: inline-flex;
-       border-right: 1px solid #dce0e0;
- 
+
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1.5rem 2rem;
+        text-align: left;
     }
-    #ownerdetails{
-       height: 100px;
-       width: 100px;
+
+    #profile {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.5rem;
+        flex: 1;
+        border-right: 1px solid #dce0e0;
+        padding-right: 2rem;
     }
-    .petdetails{
-        width: 400px;
+
+    #ownerdetails {
+        flex-shrink: 0;
+    }
+
+    .petdetails {
+        flex: 1;
+    }
+
+    .booking {
+        flex-shrink: 0;
+        margin-top: 0;
+        text-align: center;
+        min-width: 160px;
+    }
+
+    .about,
+    .care,
+    .games,
+    .photos {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .care {
+        display: flex;
+        gap: 3rem;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .games {
+        display: flex;
+        gap: 3rem;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .care h4,
+    .games h4 {
+        min-width: 140px;
         margin: 0;
- 
     }
-    .booking{
-        margin-left: 46px;
-        margin-top: 30px;
+
+    .photos {
+        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 2.5rem;
     }
-    .button{
-        padding: 10px 50px 10px 50px;
-    }
-    section{
-        background-color: #f5f5f5;
-        /* border-bottom: 1px solid #dce0e0; */
-    }
-    .about{
-        margin-left: 310px;
-      width: 700px;
-    }
-    .care{
-     margin-left: 310px;
-     width: 700px;
-     height: 150px;
-     display: inline-flex;
-     justify-content: space-between;
-     align-items: baseline;
-    }
-    .care h4{
-        width: 170px;
-    }
-    .games{
-     margin-left: 310px;
-     width: 700px;
-     height: 150px;
-     display: inline-flex;
-     justify-content: flex-start;
-     align-items: baseline;
-    }
-    .games h4{
-     width: 170px; 
-     margin-right: 77px;
-    }
-    .photos{
-     margin-left: 310px;
-     width: 700px;
-     margin-top: 28px;
-     margin-bottom: 80px;
-     display: inline;
- 
-    }
-    .photos img{
-        width: 200px;
-        height: 300px;
-        margin-right: 17px;
-        
-    }
-  
- 
- 
- }
+}
