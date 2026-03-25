@@ -39,8 +39,6 @@ header {
 /* ── Hero ── */
 .hero img {
     width: 100%;
-    max-height: 420px;
-    object-fit: cover;
     display: block;
 }
 
@@ -227,8 +225,7 @@ time {
 .photos img {
     width: 100%;
     border-radius: 4px;
-    object-fit: cover;
-    aspect-ratio: 4 / 3;
+    display: block;
 }
 
 /* ── Footer ── */
