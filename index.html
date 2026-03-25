@@ -12,7 +12,128 @@
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- ══════════════════════════════════════
+         SIGN IN / SIGN UP MODAL
+    ══════════════════════════════════════ -->
+    <div class="modal-overlay" id="auth-overlay" role="dialog" aria-modal="true" aria-label="Sign in">
+        <div class="modal" id="auth-modal">
+            <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+            <div class="modal-header">
+                <span class="modal-logo">Air<span>CnC</span></span>
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="signin">Sign In</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+            </div>
+
+            <!-- Sign In -->
+            <form class="auth-form" id="form-signin">
+                <h2>Welcome back</h2>
+                <p class="auth-sub">Sign in to manage your bookings</p>
+
+                <button type="button" class="social-btn google-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    Continue with Google
+                </button>
+
+                <div class="divider-or"><span>or</span></div>
+
+                <div class="form-group">
+                    <label for="si-email">Email address</label>
+                    <input type="email" id="si-email" placeholder="you@example.com" autocomplete="email">
+                    <span class="field-error" id="si-email-err"></span>
+                </div>
+                <div class="form-group">
+                    <label for="si-password">Password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="si-password" placeholder="Your password" autocomplete="current-password">
+                        <button type="button" class="toggle-pw" aria-label="Toggle password">
+                            <svg class="eye-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                        </button>
+                    </div>
+                    <span class="field-error" id="si-pw-err"></span>
+                </div>
+                <a href="#" class="forgot-link">Forgot password?</a>
+                <button type="submit" class="auth-submit">Sign In</button>
+                <p class="auth-switch">Don't have an account? <button type="button" class="link-btn" data-switch="signup">Sign up</button></p>
+            </form>
+
+            <!-- Sign Up -->
+            <form class="auth-form hidden" id="form-signup">
+                <h2>Create account</h2>
+                <p class="auth-sub">Join AirCnC and start booking today</p>
+
+                <button type="button" class="social-btn google-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    Continue with Google
+                </button>
+
+                <div class="divider-or"><span>or</span></div>
+
+                <div class="form-group">
+                    <label for="su-name">Full name</label>
+                    <input type="text" id="su-name" placeholder="Saurav Sikarwar" autocomplete="name">
+                    <span class="field-error" id="su-name-err"></span>
+                </div>
+                <div class="form-group">
+                    <label for="su-email">Email address</label>
+                    <input type="email" id="su-email" placeholder="you@example.com" autocomplete="email">
+                    <span class="field-error" id="su-email-err"></span>
+                </div>
+                <div class="form-group">
+                    <label for="su-password">Password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="su-password" placeholder="Min. 8 characters" autocomplete="new-password">
+                        <button type="button" class="toggle-pw" aria-label="Toggle password">
+                            <svg class="eye-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                        </button>
+                    </div>
+                    <span class="field-error" id="su-pw-err"></span>
+                </div>
+                <div class="form-group">
+                    <label for="su-confirm">Confirm password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="su-confirm" placeholder="Re-enter password" autocomplete="new-password">
+                        <button type="button" class="toggle-pw" aria-label="Toggle password">
+                            <svg class="eye-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                        </button>
+                    </div>
+                    <span class="field-error" id="su-confirm-err"></span>
+                </div>
+                <button type="submit" class="auth-submit">Create Account</button>
+                <p class="auth-switch">Already have an account? <button type="button" class="link-btn" data-switch="signin">Sign in</button></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         MOBILE NAV DRAWER
+    ══════════════════════════════════════ -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    <div class="nav-drawer" id="nav-drawer">
+        <div class="nav-drawer-header">
+            <span class="logo-text">Air<span class="logo-accent">CnC</span></span>
+            <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="#about" class="drawer-link">About</a>
+            <a href="#care" class="drawer-link">Care &amp; Schedule</a>
+            <a href="#gallery" class="drawer-link">Photo Gallery</a>
+            <a href="#reviews" class="drawer-link">Reviews</a>
+        </nav>
+        <div class="drawer-actions">
+            <button class="drawer-signin" id="drawer-signin-btn">Sign In</button>
+            <a href="mailto:sauravsikarwar771@gmail.com?subject=Booking Request" class="drawer-book">Request to Book</a>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         HEADER
+    ══════════════════════════════════════ -->
     <header id="site-header">
         <div class="header-inner">
             <div class="logo">
@@ -24,13 +145,21 @@
                 <a href="#gallery">Photos</a>
                 <a href="#reviews">Reviews</a>
             </nav>
-            <a href="mailto:sauravsikarwar771@gmail.com?subject=Booking Request" class="header-btn">Book Now</a>
+            <div class="header-actions">
+                <button class="signin-btn" id="signin-btn">Sign In</button>
+                <a href="mailto:sauravsikarwar771@gmail.com?subject=Booking Request" class="header-btn">Book Now</a>
+                <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
 
-        <!-- HERO -->
+        <!-- ══════════════════════════════════════
+             HERO
+        ══════════════════════════════════════ -->
         <section class="hero" id="hero">
             <div class="hero-images">
                 <div class="hero-main">
@@ -41,10 +170,12 @@
                     <img src="images/dog-3.jpg" alt="Golden Retriever">
                 </div>
             </div>
-            <button class="show-photos-btn">&#9644; Show all photos</button>
+            <button class="show-photos-btn" id="show-photos-btn">&#9644; Show all photos</button>
         </section>
 
-        <!-- PAGE CONTENT -->
+        <!-- ══════════════════════════════════════
+             PAGE CONTENT
+        ══════════════════════════════════════ -->
         <div class="page-container">
             <div class="content-left">
 
@@ -83,27 +214,21 @@
                 <!-- HIGHLIGHTS -->
                 <div class="highlights">
                     <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <img src="images/icons/mute.svg" alt="">
-                        </div>
+                        <div class="highlight-icon"><img src="images/icons/mute.svg" alt=""></div>
                         <div class="highlight-text">
                             <strong>Doesn't Bark</strong>
                             <span>Super quiet and calm companion</span>
                         </div>
                     </div>
                     <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <img src="images/icons/baby.svg" alt="">
-                        </div>
+                        <div class="highlight-icon"><img src="images/icons/baby.svg" alt=""></div>
                         <div class="highlight-text">
                             <strong>Kid Friendly</strong>
                             <span>Gentle and great with children</span>
                         </div>
                     </div>
                     <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <img src="images/icons/lightning.svg" alt="">
-                        </div>
+                        <div class="highlight-icon"><img src="images/icons/lightning.svg" alt=""></div>
                         <div class="highlight-text">
                             <strong>Energetic</strong>
                             <span>Loves outdoor activities &amp; play</span>
@@ -163,15 +288,9 @@
                 <div class="section-block">
                     <h2>Favourite Activities</h2>
                     <div class="games-grid">
-                        <div class="game-chip">
-                            <img src="images/icons/frisbee.svg" alt=""> Frisbee
-                        </div>
-                        <div class="game-chip">
-                            <img src="images/icons/pool.svg" alt=""> Swimming
-                        </div>
-                        <div class="game-chip">
-                            <img src="images/icons/bone.svg" alt=""> Fetch
-                        </div>
+                        <div class="game-chip"><img src="images/icons/frisbee.svg" alt=""> Frisbee</div>
+                        <div class="game-chip"><img src="images/icons/pool.svg" alt=""> Swimming</div>
+                        <div class="game-chip"><img src="images/icons/bone.svg" alt=""> Fetch</div>
                     </div>
                 </div>
 
@@ -199,40 +318,28 @@
                         <div class="review-card">
                             <div class="reviewer">
                                 <div class="reviewer-avatar">P</div>
-                                <div>
-                                    <strong>Priya M.</strong>
-                                    <span>March 2026</span>
-                                </div>
+                                <div><strong>Priya M.</strong><span>March 2026</span></div>
                             </div>
                             <p>Absolutely loved spending time with this gorgeous golden! Super friendly, calm, and playful. Saurav was very responsive and helpful. Will definitely book again!</p>
                         </div>
                         <div class="review-card">
                             <div class="reviewer">
                                 <div class="reviewer-avatar">R</div>
-                                <div>
-                                    <strong>Rahul K.</strong>
-                                    <span>February 2026</span>
-                                </div>
+                                <div><strong>Rahul K.</strong><span>February 2026</span></div>
                             </div>
                             <p>Best experience ever! The dog was so well-behaved and loving. My kids absolutely adored him. Highly recommend to any dog lover in Delhi!</p>
                         </div>
                         <div class="review-card">
                             <div class="reviewer">
-                                <div class="reviewer-avatar">A</div>
-                                <div>
-                                    <strong>Ananya S.</strong>
-                                    <span>January 2026</span>
-                                </div>
+                                <div class="reviewer-avatar" style="background:#2563eb">A</div>
+                                <div><strong>Ananya S.</strong><span>January 2026</span></div>
                             </div>
                             <p>Such a well-trained and happy dog. Saurav provided detailed instructions and was always just a call away. The whole experience felt premium and stress-free.</p>
                         </div>
                         <div class="review-card">
                             <div class="reviewer">
-                                <div class="reviewer-avatar">V</div>
-                                <div>
-                                    <strong>Vikram D.</strong>
-                                    <span>December 2025</span>
-                                </div>
+                                <div class="reviewer-avatar" style="background:#059669">V</div>
+                                <div><strong>Vikram D.</strong><span>December 2025</span></div>
                             </div>
                             <p>Took him on long morning walks and he was the happiest dog I've ever seen. Didn't bark once, great with strangers too. 10/10 would recommend!</p>
                         </div>
@@ -252,7 +359,9 @@
 
             </div>
 
-            <!-- BOOKING CARD -->
+            <!-- ══════════════════════════════════════
+                 BOOKING CARD (desktop sticky)
+            ══════════════════════════════════════ -->
             <aside class="booking-card">
                 <div class="booking-card-inner">
                     <div class="booking-price">
@@ -309,7 +418,9 @@
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ══════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════ -->
     <footer>
         <div class="footer-inner">
             <div class="footer-logo">Air<span>CnC</span></div>
